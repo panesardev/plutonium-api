@@ -1,22 +1,20 @@
 {
-  "name": "api",
+  "name": "plutonium-api",
   "version": "1.0.0",
   "main": "src/index.ts",
+  "private": true,
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "git": "git add . && git commit -m refactor",
-    "deploy": "git push origin master",
+    "push": "git push origin master",
     "vercel-build": ""
   },
-  "keywords": [],
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "helmet": "^6.1.5",
-    "morgan": "^1.10.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
