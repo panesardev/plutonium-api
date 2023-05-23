@@ -1,6 +1,6 @@
-import express from 'express';
 import cors from 'cors';
-import { featuredArticle } from './routes/featured-article';
+import express from 'express';
+import { router } from './routes';
 
 require('dotenv').config();
 
@@ -10,12 +10,7 @@ const port = process.env.PORT || 3000;
 
 server.use(cors());
 server.use(express.json());
-
-
-// routes
-server.get('/', (req, res) => res.json({ app: 'Plutonium API' }));
-server.get('/featured-article', featuredArticle);
-
+server.use(router);
 
 server.listen(port, () => {
   console.log(`Server listening on port ${port}`);
