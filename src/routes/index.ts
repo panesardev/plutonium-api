@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { featuredArticle } from "./featured-article";
 
 
-function index(request: Request, response: Response) {
+const index = (request: Request, response: Response) => {
   response.json({
     featured: '/featured-article',
   });
