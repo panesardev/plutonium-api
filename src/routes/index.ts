@@ -8,7 +8,6 @@ const index = (request: Request, response: Response) => {
   });
 }
 
-
 const router = Router();
 
 router.get('/', index);
