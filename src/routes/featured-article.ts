@@ -1,13 +1,12 @@
 import { Request, Response } from 'express';
 import { load } from 'cheerio';
-import { FeaturedArticle } from '../interfaces/article';
+import { FeaturedArticle } from '../types/article';
+import { constants } from '../constants';
 
-const FEATURED_ARTICLE_SLUG = 'integrating-firebase-into-angular';
+const URL = `${constants.domain}/articles/${constants.featuredArticleSlug}`;
 
 export async function featuredArticle(request: Request, response: Response) {
-	const url = `https://plutonium-dev.uc.r.appspot.com/articles/${FEATURED_ARTICLE_SLUG}`;
-
-	let res = await fetch(url);
+	let res = await fetch(URL);
 	let html = await res.text();
 	
 	let $ = load(html);
@@ -18,7 +17,7 @@ export async function featuredArticle(request: Request, response: Response) {
 		$(`meta[name=${name}]`).attr('content');
 
 	const article: FeaturedArticle = {
-		url,
+		url: URL,
 		title: getMetaTag('title'),
 		description: getMetaTag('description'),
 		coverUrl: getMetaTag('image'),
