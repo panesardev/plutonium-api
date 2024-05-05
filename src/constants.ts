@@ -1,4 +1,5 @@
-export const constants = {
- domain: 'https://plutonium-dev.vercel.app',
- featuredArticleSlug: 'integrating-firebase-into-angular',
-};
+export const BASE_URL = 'https://plutonium-api.vercel.app';
+
+export const DOMAIN = 'https://plutoniumx.vercel.app';
+
+export const FEATURED_SLUG = 'integrating-firebase-into-angular';
