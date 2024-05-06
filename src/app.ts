@@ -1,5 +1,6 @@
 import compression from 'compression';
 import express from 'express';
+import cors from 'cors';
 import { ArticleController } from './domain/articles/article.controller';
 import { AuthController } from './domain/auth/auth.controller';
 
@@ -28,7 +29,7 @@ export default class App {
   getExpress() {
     this.express.use(compression());
     this.express.use(express.json());
-    this.express.use(express.static('public'));
+    this.express.use(cors());
 
     this.useControllers();
 
