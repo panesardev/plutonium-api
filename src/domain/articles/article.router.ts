@@ -3,7 +3,7 @@ import { Request, Response, Router } from 'express';
 import { DOMAIN } from '../../constants';
 import { FeaturedArticle } from './article.interface';
 
-export namespace ArticleController {
+export namespace ArticleRouter {
   export const router = Router();
 
   router.get('/featured', async (request: Request, response: Response) => {

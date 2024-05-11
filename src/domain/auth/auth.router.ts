@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 
-export namespace AuthController {
+export namespace AuthRouter {
   export const router = Router();
 
   router.get('/is-admin/:email', async (request: Request, response: Response) => {
