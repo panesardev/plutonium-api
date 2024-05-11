@@ -1,13 +1,13 @@
 import { load } from 'cheerio';
 import { Request, Response, Router } from 'express';
-import { DOMAIN } from '../../constants';
+import { DOMAIN, FEATURED_SLUG } from '../../constants';
 import { FeaturedArticle } from './article.interface';
 
 export namespace ArticleRouter {
   export const router = Router();
 
   router.get('/featured', async (request: Request, response: Response) => {
-    const URL = `${DOMAIN}/articles/${process.env.FEATURED_SLUG}`;
+    const URL = `${DOMAIN}/articles/${FEATURED_SLUG}`;
 
     const res = await fetch(URL);
     const html = await res.text();
