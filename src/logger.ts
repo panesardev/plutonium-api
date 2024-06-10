@@ -1,6 +1,8 @@
-import { NextFunction, Request, Response } from "express";
+import { RequestHandler } from "express";
 
-export function logger(request: Request, response: Response, next: NextFunction) {
-  console.log(`[${request.method}] ${request.url}`);
-  next();
+export function logger(): RequestHandler {
+  return (request, response, next) => {
+    console.log(`[${request.method}] ${request.url}`);
+    next();
+  }
 }

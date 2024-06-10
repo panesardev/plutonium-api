@@ -14,7 +14,7 @@ export function getServer(): Express {
   server.use(cors());
   server.use(express.json());
 
-  server.use(logger);
+  server.use(logger());
 
   server.use('/articles', ArticleRouter.router);
   server.use('/auth', AuthRouter.router);
