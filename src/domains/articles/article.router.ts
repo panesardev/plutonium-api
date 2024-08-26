@@ -15,8 +15,8 @@ export namespace ArticleRouter {
 
     function getMetatag(name: string): string {  
       return $(`meta[property="og:${name}"]`).attr('content') ||  
-      $(`meta[name="twitter:${name}"]`).attr('content') ||
-      $(`meta[name=${name}]`).attr('content');
+        $(`meta[name="twitter:${name}"]`).attr('content') ||
+        $(`meta[name=${name}]`).attr('content');
     }
 
     const article: FeaturedArticle = {

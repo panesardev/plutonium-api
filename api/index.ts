@@ -1,3 +1,5 @@
-import { getServer } from "../src/server";
+require('dotenv').config();
 
-export default getServer();
+import { App } from "../src/app";
+
+export default new App().getExpress();
